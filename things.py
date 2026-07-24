@@ -13,5 +13,5 @@ def wait():
     """
     return em(
         color=c.blue(),
-        title=choice(["Hold on...", "Wait...", "Thinking..."])
+        title=choice(["Hold on...", "Wait...", "Thinking...", "Uhh..."])
     )
