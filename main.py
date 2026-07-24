@@ -7,14 +7,10 @@ Main file of the bot
 import discord
 from discord.ext import commands
 import os
-from dotenv import load_dotenv
 from db import setup as setup_db
 
-load_dotenv()
 TOKEN = os.getenv("DISCORD_TOKEN")
 if not TOKEN: raise ValueError("Discord Bot Token was not set or found.")
-DB_PATH = os.getenv("DB_PATH")
-if not DB_PATH: raise ValueError("Path for data base file was not set or found.")
 
 intents = discord.Intents.default()
 

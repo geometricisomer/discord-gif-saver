@@ -5,7 +5,10 @@ Handles connection with data base.
 """
 
 import sqlite3
-from main import DB_PATH
+import os
+
+DB_PATH = f"{os.getenv("DB_PATH")}/data.db"
+if not DB_PATH: raise ValueError("Path for data base file was not set or found.")
 
 conn = sqlite3.connect(DB_PATH, check_same_thread=False) # type: ignore
 conn.execute("PRAGMA foreign_keys = ON")
